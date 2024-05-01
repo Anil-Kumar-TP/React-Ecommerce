@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 const Header = () => {
     const productData = useSelector((state) => state.bazar.productData);
@@ -20,10 +21,12 @@ const Header = () => {
                         <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Element</li>
                         <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Blog</li>
                     </ul>
-                    <div className='relative cursor-pointer'>
-                        <img src="https://w7.pngwing.com/pngs/657/152/png-transparent-shopping-bags-trolleys-shopping-cart-shopping-cart-rectangle-logo-shopping-bags-trolleys-thumbnail.png" alt="" className='w-8' />
-                        <span className='absolute w-6 top-3 left-1 text-base flex items-center justify-center font-semibold'>{productData.length}</span>
-                    </div>
+                    <Link to='/cart'>
+                        <div className='relative cursor-pointer'>
+                            <img src="https://w7.pngwing.com/pngs/657/152/png-transparent-shopping-bags-trolleys-shopping-cart-shopping-cart-rectangle-logo-shopping-bags-trolleys-thumbnail.png" alt="" className='w-8' />
+                            <span className='absolute w-6 top-3 left-1 text-base flex items-center justify-center font-semibold'>{productData.length}</span>
+                        </div>
+                    </Link>
                     <img src="https://images.pexels.com/photos/1009904/pexels-photo-1009904.jpeg?auto=compress&cs=tinysrgb&w=600" alt="userIcon" className='w-8 h-8 rounded-full object-cover' />
                 </div>
             </div>
